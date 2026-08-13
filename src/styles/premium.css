@@ -1,0 +1,312 @@
+/* ==========================================================
+   PREMIUM SECTION
+========================================================== */
+
+.premium {
+  position: relative;
+
+  padding: 8rem 5rem 9rem;
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================================
+   AMBIENT GLOW
+========================================================== */
+
+.premium::before {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 550px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 92, 255, 0.16),
+      rgba(20, 96, 91, 0.08) 45%,
+      transparent 70%
+    );
+
+  filter: blur(45px);
+
+  pointer-events: none;
+}
+
+
+/* ==========================================================
+   HEADING
+========================================================== */
+
+.premium h2 {
+  position: relative;
+
+  margin: 0 0 20px;
+
+  color: var(--text-primary);
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+
+  line-height: 1;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.premium-text {
+  position: relative;
+
+  max-width: 700px;
+
+  margin: 0 auto 55px;
+
+  color: var(--text-secondary);
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================================
+   PRICING CARD
+========================================================== */
+
+.pricing-card {
+  position: relative;
+
+  max-width: 420px;
+
+  margin: auto;
+
+  padding: 48px 44px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+
+  border: 1px solid rgba(255, 255, 255, 0.11);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.24);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+
+/* Card ambient glow */
+
+.pricing-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -130px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(124, 92, 255, 0.14);
+
+  filter: blur(55px);
+
+  pointer-events: none;
+}
+
+
+/* Hover */
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+
+  background: rgba(255, 255, 255, 0.065);
+
+  border-color: rgba(124, 92, 255, 0.32);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.28),
+    0 0 45px rgba(124, 92, 255, 0.09);
+}
+
+
+/* ==========================================================
+   PLAN NAME
+========================================================== */
+
+.pricing-card h3 {
+  position: relative;
+
+  margin: 0 0 20px;
+
+  color: var(--text-primary);
+
+  font-size: 1.6rem;
+
+  font-weight: 700;
+}
+
+
+/* ==========================================================
+   PRICE
+========================================================== */
+
+.pricing-card h1 {
+  position: relative;
+
+  margin: 0 0 30px;
+
+  font-size: 4rem;
+
+  font-weight: 800;
+
+  letter-spacing: -0.05em;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 15%,
+      #c5cfff 55%,
+      #76b8b6 100%
+    );
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+
+  color: transparent;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-card h1 span {
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  color: var(--text-secondary);
+
+  -webkit-text-fill-color: var(--text-secondary);
+}
+
+
+/* ==========================================================
+   FEATURES
+========================================================== */
+
+.pricing-card ul {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0 0 35px;
+
+  text-align: left;
+}
+
+.pricing-card li {
+  padding: 12px 0;
+
+  color: var(--text-secondary);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.pricing-card li:last-child {
+  border-bottom: none;
+}
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.pricing-card button {
+  position: relative;
+
+  width: 100%;
+
+  padding: 15px 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 999px;
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c5cff,
+      #317f89
+    );
+
+  box-shadow:
+    0 12px 35px rgba(124, 92, 255, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+.pricing-card button:hover {
+  transform: translateY(-3px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 18px 45px rgba(124, 92, 255, 0.38);
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 700px) {
+  .premium {
+    padding: 6rem 1.25rem;
+  }
+
+  .pricing-card {
+    padding: 40px 25px;
+  }
+
+  .pricing-card h1 {
+    font-size: 3.2rem;
+  }
+}

@@ -1,0 +1,689 @@
+/* ==========================================================
+   HERO VISUAL
+   ========================================================== */
+
+.hero-visual {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 420px;
+}
+
+/* ==========================================================
+   ORBITS
+   ========================================================== */
+
+.hero-orbits {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.orbit {
+  position: absolute;
+
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+  0 0 30px rgba(124,92,255,.06);
+}
+
+.orbit-one {
+  width: 340px;
+  height: 340px;
+
+  animation: orbitClockwise 32s linear infinite;
+}
+
+.orbit-two {
+  width: 470px;
+  height: 470px;
+
+  animation: orbitCounter 42s linear infinite;
+}
+
+.orbit-three {
+  width: 620px;
+  height: 620px;
+
+  animation: orbitPulse 8s ease-in-out infinite;
+}
+
+/* ==========================================================
+   FLOATING CARD
+   ========================================================== */
+
+.floating-card {
+  position: relative;
+  z-index: 3;
+}
+
+.album-card {
+  position: relative;
+
+  width: 370px;
+
+  padding: 2rem;
+
+  border-radius: 36px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(30px);
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.42),
+    0 0 90px rgba(124, 92, 255, 0.22);
+    transform-style: preserve-3d;
+perspective: 1200px;
+
+transition:
+  transform .6s cubic-bezier(.22,1,.36,1),
+  box-shadow .6s ease,
+  border-color .6s ease;
+}
+
+.album-glow {
+  position: absolute;
+
+  inset: -40%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 92, 255, 0.25),
+      transparent 70%
+      animation glowPulse 8s ease-in-out infinite
+    );
+
+  filter: blur(50px);
+
+  pointer-events: none;
+}
+.album-noise {
+  position: absolute;
+  inset: 0;
+
+  opacity: .06;
+
+  background-image:
+    radial-gradient(circle at 20% 20%, white 1px, transparent 1px),
+    radial-gradient(circle at 80% 60%, white 1px, transparent 1px);
+
+  background-size: 24px 24px;
+
+  pointer-events: none;
+}
+
+.album-icon {
+  width: 82px;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 24px;
+
+  margin-bottom: 2rem;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #7c5cff,
+    #5fd8ff
+  );
+  box-shadow:
+  0 0 40px rgba(124,92,255,.35);
+  transition:
+  transform .45s ease,
+  box-shadow .45s ease;
+}
+
+.album-info h3 {
+  margin: 0;
+
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.album-info p {
+  margin-top: .5rem;
+
+  color: var(--text-secondary);
+}
+
+.album-label {
+  display: inline-block;
+
+  margin-bottom: .9rem;
+
+  color: #7c5cff;
+
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+
+  text-transform: uppercase;
+}
+/* ==========================================================
+   PLAY BUTTON
+   ========================================================== */
+
+.play-button {
+  width: 70px;
+  height: 70px;
+
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #7c5cff,
+    #59d9ff
+  );
+   transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+box-shadow: 0 0 30px rgba(124,92,255,.35);
+
+  .play-button:hover {
+  transform:
+    scale(1.12)
+    rotate(8deg);
+
+  box-shadow:
+    0 0 45px rgba(124,92,255,.55);
+}
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+    box-shadow: 0 0 30px rgba(124,92,255,.35);
+
+}
+.play-button:hover {
+  transform: scale(1.08);
+
+  box-shadow:
+    0 0 45px rgba(124, 92, 255, 0.55);
+}
+
+.play-button:active {
+  transform: scale(0.96);
+}
+
+.album-card:hover {
+  transform:
+    translateY(-10px)
+    rotateX(4deg)
+    rotateY(-4deg);
+
+  border-color: rgba(124,92,255,.35);
+
+  box-shadow:
+    0 45px 100px rgba(0,0,0,.45),
+    0 0 90px rgba(124,92,255,.28);
+    transform:
+  translateY(-12px)
+  rotateX(5deg)
+  rotateY(-5deg);
+}
+.album-card:hover::after {
+  transform:
+    translateX(220%)
+    rotate(25deg);
+}
+
+/* ==========================================================
+   FLOATING BADGES
+   ========================================================== */
+
+.floating-badge {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+
+  padding: .1rem 1.3rem;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,.07);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  color: white;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.22);
+}
+
+.badge-top {
+  top: 60px;
+  right: 30px;
+}
+
+.badge-right {
+  right: -30px;
+  top: 260px;
+}
+
+.badge-left {
+  left: -30px;
+  bottom: 80px;
+}
+
+.floating-badge svg {
+  color: var(--primary);
+}
+/* ==========================================================
+   MICRO INTERACTIONS
+   ========================================================== */
+
+.album-card {
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.album-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(124, 92, 255, 0.35);
+
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, 0.45),
+    0 0 70px rgba(124, 92, 255, 0.25);
+}
+
+.floating-badge {
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.floating-badge:hover {
+  transform: translateY(-4px);
+
+  background: rgba(255, 255, 255, 0.10);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 1100px) {
+  .hero-visual {
+    min-height: 560px;
+  }
+
+  .badge-right {
+    right: 0;
+  }
+
+  .badge-left {
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-visual {
+    min-height: 460px;
+  }
+
+  .album-card {
+    width: 100%;
+    max-width: 320px;
+
+    padding: 1.6rem;
+  }
+
+  .floating-badge {
+    position: static;
+
+    margin-top: 1rem;
+  }
+
+  .hero-orbits {
+    transform: scale(0.75);
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-visual {
+    min-height: 380px;
+  }
+  .hero-light {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+  opacity: .75;
+}
+
+.hero-light-one {
+  width: 340px;
+  height: 340px;
+
+  top: 8%;
+  right: 12%;
+
+  background: rgba(124, 92, 255, .28);
+}
+
+.hero-light-two {
+  width: 280px;
+  height: 280px;
+
+  bottom: 10%;
+  left: 8%;
+
+  background: rgba(89, 217, 255, .22);
+}
+
+  .album-card {
+    max-width: 280px;
+  }
+
+  .album-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .album-info h3 {
+    font-size: 1.6rem;
+  }
+}
+.album-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.18),
+    rgba(255,255,255,.03) 35%,
+    transparent 65%
+  );
+  .album-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -40%;
+  left: -60%;
+
+  width: 70%;
+  height: 180%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.14),
+    transparent
+  );
+
+  transform: rotate(25deg);
+
+  transition: transform .8s ease;
+
+  pointer-events: none;
+}
+
+  pointer-events: none;
+}
+/* ==========================================================
+   ORBIT ANIMATIONS
+   ========================================================== */
+
+@keyframes orbitClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitCounter {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes orbitPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: .35;
+  }
+
+  50% {
+    transform: scale(1.03);
+    opacity: .6;
+  }
+}@keyframes glowPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: .45;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: .8;
+  }
+}
+.album-card:hover .album-icon {
+  transform:
+    translateY(-4px)
+    scale(1.06);
+
+  box-shadow:
+    0 0 60px rgba(124,92,255,.55);
+}
+.hero-mouse-glow {
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(124,92,255,.22),
+    transparent 70%
+  );
+
+  filter: blur(90px);
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+
+  animation: glowFloat 8s ease-in-out infinite;
+}
+@keyframes glowFloat {
+
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+}
+/* ==========================================================
+   ALBUM PROGRESS
+   ========================================================== */
+
+.album-progress {
+  margin-top: 1.6rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+
+  border-radius: 999px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.progress-fill {
+  width: 55%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #7c5cff,
+    #59d9ff
+  );
+
+  box-shadow:
+    0 0 18px rgba(124, 92, 255, 0.45);
+}
+
+.progress-time {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 0.6rem;
+
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+}
+/* ==========================================================
+   ALBUM ART
+   ========================================================== */
+
+.album-art {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 2rem;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(89, 217, 255, 0.5),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(124, 92, 255, 0.55),
+      transparent 45%
+    ),
+    rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.album-art svg {
+  position: relative;
+  z-index: 2;
+
+  opacity: 0.9;
+}
+
+.album-art span {
+  position: absolute;
+
+  right: 1.2rem;
+  bottom: 0.9rem;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.album-art-glow {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: rgba(124, 92, 255, 0.35);
+
+  filter: blur(60px);
+}
+.album-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  margin-top: 0.7rem;
+
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 0.78rem;
+  font-weight: 500;
+}

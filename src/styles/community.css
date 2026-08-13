@@ -1,0 +1,253 @@
+/* ==========================================================
+   COMMUNITY SECTION
+========================================================== */
+
+.community-section {
+  position: relative;
+
+  padding: 8rem 5rem 9rem;
+
+  overflow: hidden;
+
+  text-align: center;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.community-header {
+  max-width: 720px;
+
+  margin: 0 auto 3.5rem;
+}
+
+.community-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 1rem;
+
+  color: var(--primary-light);
+
+  font-size: 0.76rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.community-header h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
+
+  font-weight: 750;
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+}
+
+.community-text {
+  max-width: 650px;
+
+  margin: 1.4rem auto 0;
+
+  color: var(--text-secondary);
+
+  font-size: 1.05rem;
+
+  line-height: 1.75;
+}
+
+
+/* ==========================================================
+   COMMUNITY STATS
+========================================================== */
+
+.community-stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1.4rem;
+
+  max-width: 1050px;
+
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   STAT CARD
+========================================================== */
+
+.stat-card {
+  position: relative;
+
+  min-height: 170px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 2.5rem 2rem;
+
+  overflow: hidden;
+
+  border-radius: 26px;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* Ambient glow */
+
+.stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 200px;
+  height: 200px;
+
+  top: -120px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(124, 92, 255, 0.15);
+
+  filter: blur(65px);
+
+  pointer-events: none;
+}
+
+
+/* Subtle bottom glow */
+
+.stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 140px;
+  height: 80px;
+
+  bottom: -60px;
+  right: -20px;
+
+  border-radius: 50%;
+
+  background: rgba(20, 96, 91, 0.16);
+
+  filter: blur(45px);
+
+  pointer-events: none;
+}
+
+
+/* Hover */
+
+.stat-card:hover {
+  transform: translateY(-8px);
+
+  background: rgba(255, 255, 255, 0.065);
+
+  border-color: rgba(124, 92, 255, 0.24);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.24),
+    0 0 35px rgba(124, 92, 255, 0.07);
+}
+
+
+/* ==========================================================
+   STAT TEXT
+========================================================== */
+
+.stat-card h3 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+
+  font-weight: 750;
+
+  letter-spacing: -0.04em;
+}
+
+.stat-card p {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0.55rem 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 900px) {
+  .community-section {
+    padding: 7rem 2.5rem;
+  }
+
+  .community-stats {
+    grid-template-columns: 1fr;
+
+    max-width: 500px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .community-section {
+    padding: 6rem 1.25rem;
+  }
+
+  .community-header h2 {
+    font-size: 2.7rem;
+  }
+
+  .community-text {
+    font-size: 0.98rem;
+  }
+
+  .stat-card {
+    min-height: 150px;
+
+    padding: 2rem 1.5rem;
+  }
+}

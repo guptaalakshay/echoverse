@@ -1,0 +1,156 @@
+/* =========================================
+   ECHOVERSE — GLOBAL STYLES
+========================================= */
+
+:root {
+  /* Background */
+  --bg-primary: #08111f;
+  --bg-secondary: #0f172a;
+  --bg-surface: rgba(255, 255, 255, 0.06);
+  --bg-surface-hover: rgba(255, 255, 255, 0.09);
+
+  /* Brand */
+  --primary: #7c5cff;
+  --primary-light: #9985ff;
+  --secondary: #59d9ff;
+  --accent: #ff77c8;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #c9d2e3;
+  --text-muted: #8d97aa;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+}
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+
+  color: var(--text-primary);
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+
+  /* EchoVerse atmosphere:
+     purple → midnight blue → dark blue/green */
+  background:
+    radial-gradient(
+      circle at 12% 20%,
+      rgba(124, 92, 255, 0.30),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 82% 25%,
+      rgba(24, 96, 91, 0.28),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 70% 75%,
+      rgba(12, 67, 78, 0.24),
+      transparent 45%
+    ),
+    linear-gradient(
+      110deg,
+      #120b2b 0%,
+      #0b1322 48%,
+      #071b20 100%
+    );
+
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   ROOT
+========================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  color: inherit;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+section {
+  position: relative;
+  scroll-margin-top: 110px;
+}
+
+/* =========================================
+   TEXT SELECTION
+========================================= */
+
+::selection {
+  background: rgba(124, 92, 255, 0.35);
+  color: #ffffff;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08111f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #7c5cff,
+    #59d9ff
+  );
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #9985ff,
+    #59d9ff
+  );
+}
