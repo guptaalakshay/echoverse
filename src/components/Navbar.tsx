@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Menu, X, ArrowRight } from "lucide-react";
+
 import "../styles/navbar.css";
 
 function Navbar() {
@@ -14,7 +15,9 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const closeMenu = () => {
@@ -24,9 +27,9 @@ function Navbar() {
   return (
     <>
       <motion.nav
-        className={scrolled ? "navbar scrolled" : "navbar"}
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+  className={scrolled ? "navbar scrolled" : "navbar"}
+  initial={{ x: "-50%", y: -80, opacity: 0 }}
+  animate={{ x: "-50%", y: 0, opacity: 1 }}
         transition={{
           duration: 0.6,
           ease: "easeOut",
@@ -40,10 +43,21 @@ function Navbar() {
 
         {/* DESKTOP NAVIGATION */}
         <div className="nav-links">
-          <a href="#discover">Discover</a>
-          <a href="#artists">Artists</a>
-          <a href="#communities">Community</a>
-          <a href="#premium">Premium</a>
+          <a href="#discover" onClick={closeMenu}>
+            Discover
+          </a>
+
+          <a href="#artists" onClick={closeMenu}>
+            Artists
+          </a>
+
+          <a href="#communities" onClick={closeMenu}>
+            Community
+          </a>
+
+          <a href="#premium" onClick={closeMenu}>
+            Premium
+          </a>
         </div>
 
         {/* RIGHT SIDE */}
@@ -57,7 +71,7 @@ function Navbar() {
           </button>
 
           <button className="cta-btn" type="button">
-            Start Listening
+            <span>Start Listening</span>
             <ArrowRight size={17} strokeWidth={2} />
           </button>
 
@@ -118,9 +132,13 @@ function Navbar() {
               Premium
             </a>
 
-            <button className="mobile-btn" type="button">
-              Start Listening
-              <ArrowRight size={17} />
+            <button
+              className="mobile-btn"
+              type="button"
+              onClick={closeMenu}
+            >
+              <span>Start Listening</span>
+              <ArrowRight size={17} strokeWidth={2} />
             </button>
           </motion.div>
         )}
